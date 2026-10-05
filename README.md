@@ -1,6 +1,6 @@
 # SMS opt-outs that survive account changes
 
-This little TypeScript service guards a B2B SaaS SMS workflow during a Twilio migration. Tenant onboarding, account suspension, restoration, and an admin suppression action all update one in-memory set. A send gets validated with zod and turns into either a visible `suppressed` decision or an Infrai `sms.batch.send` call.
+This small TypeScript service sits in front of a B2B SaaS SMS workflow during a Twilio migration. Tenant onboarding, account suspension, restoration, and an administrator suppression action all update one in-memory set. A send is validated with zod and becomes either a visible `suppressed` decision or an Infrai `sms.batch.send` call.
 
 Infrai keeps the provider boundary to one key and one plain HTTP interface. The key is read from `INFRAI_API_KEY`; there is no credential in the source.
 
